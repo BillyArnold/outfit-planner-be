@@ -1,4 +1,4 @@
-package trips_server
+package days_server
 
 import (
 	"fmt"
@@ -23,7 +23,7 @@ func NewServer(opts ServerOpts) *Server {
 }
 
 func (s *Server) Start() {
-	fmt.Printf("starting trips server on port %s \n", s.port)
+	fmt.Printf("starting days server on port %s \n", s.port)
 	r := mux.NewRouter()
 
 	sr := r.PathPrefix("/api/v1").Subrouter()
@@ -33,5 +33,5 @@ func (s *Server) Start() {
 }
 
 func TestHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte{'h'})
+	w.Write([]byte{'d'})
 }
